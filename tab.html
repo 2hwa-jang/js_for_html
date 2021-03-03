@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/tab.css">
+    <link rel="stylesheet" href="tab.css">
 </head>
 <body>
     <div class="main">
@@ -24,10 +24,32 @@
 
 
     <div class="content">
-        <div id="tab1" data-tab-content class="item active">
+        <div id="tab1" data-tab-content class="items active">
             <h2>Tab1</h2>
-            <p>tab1에 들어갈 내용</p>
+            <p>tab1에 들어갈 내용~</p>
+        </div>
+        <div id="tab2" data-tab-content class="items">
+            <h2>Tab2</h2>
+            <p>tab2에 들어갈 내용~</p>
+        </div>
+        <div id="tab3" data-tab-content class="items">
+            <h2>Tab3</h2>
+            <p>tab3에 들어갈 내용~</p>
         </div>
     </div>
+
+    <script>
+        const tabs = document.querySelectorAll("[data-tab-target]");
+        const tabcon = document.querySelectorAll("[data-tab-content]");
+        tabs.forEach((tab)=>{
+            tab.addEventListener("click", ()=>{
+                const target = document.querySelector(tab.dataset.tabTarget);
+                tabcon.forEach((tabc_all)=>{
+                    tabc_all.classList.remove("active");
+                });
+                target.classList.add("active");
+            })
+        })
+    </script>
 </body>
 </html>
