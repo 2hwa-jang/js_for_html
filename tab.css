@@ -3,12 +3,13 @@
     padding: 0;
 }
 
-body{
-    width: 300px;
-    margin: 0px auto;
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.main{
+.menu{
     display: flex;
     flex-direction: column;
 }
@@ -20,18 +21,21 @@ body{
 .tabs .tab{
     font-size: 1rem;
     text-align: center;
-    line-height: 50px;
     width: 90px;
+    line-height: 50px;
     height: 50px;
     cursor: pointer;
     background-color: #FF9E1B;
     border: 1px solid #FFFFFF;
     color: #FFFFFF;
-    position: relative
 }
 
-.items { 
-    width: 300px;
+.tab p{
+    font-weight: bold;
+}
+
+.items {
+    width: calc( 3 * (90px + 2px) - 2 * 10px );
     display: none;
     padding: 10px;
     background-color: #FFFFFF;
@@ -42,7 +46,7 @@ body{
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
+    left: 1px;
     width: 90px;
     height: 5px;
     background-color: #000000;
@@ -60,4 +64,9 @@ body{
 
 .items.active{
     display: inline-block;
+}
+
+.items h1{
+    font-size: 1rem;
+    margin: 2px 0px;
 }

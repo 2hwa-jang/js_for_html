@@ -1,51 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tab</title>
     <link rel="stylesheet" href="tab.css">
 </head>
 <body>
-    <div class="main">
-        <div class="tabs">
-            <div class="tab" data-tab-target="#tab1">
-                <p>tab1</p>
-            </div>
-            <div class="tab" data-tab-target="#tab2">
-                <p>tab2</p>
-            </div>
-            <div class="tab" data-tab-target="#tab3">
-                <p>tab3</p>
+    <div class="container">
+        <div class="menu">
+            <div class="tabs">
+                <div class="tab" data-tab-target="#tab1">
+                    <p>Tab1</p>
+                </div>
+                <div class="tab" data-tab-target="#tab2">
+                    <p>Tab2</p>
+                </div>
+                <div class="tab" data-tab-target="#tab3">
+                    <p>Tab3</p>
+                </div>
             </div>
         </div>
-    </div>
 
-
-    <div class="content">
-        <div id="tab1" data-tab-content class="items active">
-            <h2>Tab1</h2>
-            <p>tab1에 들어갈 내용~</p>
-        </div>
-        <div id="tab2" data-tab-content class="items">
-            <h2>Tab2</h2>
-            <p>tab2에 들어갈 내용~</p>
-        </div>
-        <div id="tab3" data-tab-content class="items">
-            <h2>Tab3</h2>
-            <p>tab3에 들어갈 내용~</p>
+        <div class="content">
+            <div id="tab1" data-tab-content class="items active">
+                <h1>첫번째 탭의 제목</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, soluta aperiam vitae doloribus, natus nesciunt modi ut error molestiae voluptatem, enim illo repellendus voluptates consequuntur incidunt sit. Consequatur, facere officia.</p>
+            </div>
+            <div id="tab2" data-tab-content class="items">
+                <h1>두번째 탭의 제목</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque consectetur molestias praesentium. Obcaecati alias, blanditiis possimus assumenda rem delectus minus, recusandae necessitatibus nemo voluptates, repudiandae labore cumque sed corporis nihil!</p>
+            </div>
+            <div id="tab3" data-tab-content class="items">
+                <h1>세번째 탭의 제목</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex rem temporibus eaque animi, officia iste repellat totam. Distinctio sit ducimus aspernatur, odio hic iure nihil nisi, reiciendis, eum quo ad!</p>
+            </div>
         </div>
     </div>
 
     <script>
         const tabs = document.querySelectorAll("[data-tab-target]");
-        const tabcon = document.querySelectorAll("[data-tab-content]");
+        const tabcontents = document.querySelectorAll("[data-tab-content]");
         tabs.forEach((tab)=>{
             tab.addEventListener("click", ()=>{
                 const target = document.querySelector(tab.dataset.tabTarget);
-                tabcon.forEach((tabc_all)=>{
-                    tabc_all.classList.remove("active");
+                tabcontents.forEach((tabcontent)=>{
+                    tabcontent.classList.remove("active");
                 });
                 target.classList.add("active");
             })

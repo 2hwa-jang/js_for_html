@@ -1,26 +1,9 @@
-#star_grade a{
-    text-decoration: none;
-    color: gray;
+#star_rating span{
+    color: #a7a7a7;
+    cursor: pointer;
+    font-size: 3rem;
 }
 
-#star_grade a.on{
-    color: yellow;
-}
-
-input[type="radio"]{
-    display:none;
- }
-
-#rev-star{
-    color: #FFD757; font-size: 30px;
-}
-label i.fas.fa-star{
-    color: #a7a7a7; font-size: 35px;
-}
-label i.fas.fa-star.on{
-    color: #FFD757; font-size: 35px;
-}
-
-.review{
-    color: rosybrown;
+#star_rating span.on{
+    color: #FFD757;
 }

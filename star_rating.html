@@ -1,27 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Star Rating</title>
     <link rel="stylesheet" href="star_rating.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 </head>
 <body>
-    <p id="star_grade">
-        <a href="#">★</a>
-        <a href="#">★</a>
-        <a href="#">★</a>
-        <a href="#">★</a>
-        <a href="#">★</a>
-    </p>
+    <div id="star_rating">
+        <span class="star" data-value=1>
+            <i class="fas fa-star"></i>
+        </span>
+        <span class="star" data-value=2>
+            <i class="fas fa-star"></i>
+        </span>
+        <span class="star" data-value=3>
+            <i class="fas fa-star"></i>
+        </span>
+        <span class="star" data-value=4>
+            <i class="fas fa-star"></i>
+        </span>
+        <span class="star" data-value=5>
+            <i class="fas fa-star"></i>
+        </span>
+    </div>
+
+    <input name="score" id="score" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script>
-        $('#star_grade a').click(function(){
-            $(this).parent().children("a").removeClass("on"); /* 별점의 on 클래스 전부 제거 */
-            $(this).addClass("on").prevAll("a").addClass("on"); /* 클릭한 별과 그 앞까지 별점에 on 클래스 추가 */
-            return false;
+        $('#star_rating span').click(function(){ //span element에 click 이벤트리스너 부착
+            $(this).parent().children("span").removeClass("on"); //별점의 on 클래스 전부 제거
+            $(this).addClass("on").prevAll("span").addClass("on"); // 클릭한 별과 그 앞까지 별점에 on 클래스 추가
+            var score = $(this).attr("data-value"); //score라는 변수에 선택되어 있는 data-value값 대입
+            $('#score').val(score); //score input element의 값을 score 변수값으로 지정
         });
     </script>
 </body>
